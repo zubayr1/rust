@@ -1,4 +1,6 @@
-fn main()
-{
-    println!("zakekal");
-}
+fn main(){
+
+    println!("hello world");
+    
+    }
+    
