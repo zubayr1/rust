@@ -1,6 +1,13 @@
 const NAME: &str = "sarah ulfat";
 const AGE: u8 = 20;
 
+fn refs(x: u32) 
+{
+    let xr = &x;
+    println!("ref is {}", xr);
+}
+
+
 fn tupl()
 {
     let tup1 = (1,2,3,(4,5,6));
@@ -114,4 +121,6 @@ fn main() {
     println!("{}", NAME);
 
     tupl();
+
+    refs(20);
 }
