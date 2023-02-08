@@ -1,10 +1,38 @@
 const NAME: &str = "sarah ulfat";
 const AGE: u8 = 20;
 
-fn refs(x: u32) 
+struct Color<'a>
+{
+    red: &'a str,
+    green: &'a str,
+    blue: &'a str
+}
+
+fn arr(){
+    let numbers = [1,2,3,4,5];
+
+    println!("{}", numbers[0]);
+
+    println!("{}", numbers.len());
+
+    for i in numbers.iter()
+    {
+        println!("{}", i);
+    }
+
+
+}
+
+fn refs(mut x: u32) 
 {
     let xr = &x;
+
     println!("ref is {}", xr);
+
+    let mutxr = &mut x;   
+
+    *mutxr+=1;
+    println!("ref is {}", mutxr);
 }
 
 
@@ -123,4 +151,8 @@ fn main() {
     tupl();
 
     refs(20);
+
+    let bg = Color{red:"red", green:"green", blue:"blue"};
+
+    println!("{}", bg.red);
 }
