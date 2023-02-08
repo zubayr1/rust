@@ -1,3 +1,16 @@
+const NAME: &str = "sarah ulfat";
+const AGE: u8 = 20;
+
+fn tupl()
+{
+    let tup1 = (1,2,3,(4,5,6));
+
+    //destructuring
+    let (a,b,c,d) = tup1;
+    println!("{}", tup1.2);
+    println!("{}", (tup1.3).1);
+}
+
 fn forloop() -> i32
 {
     let mut m = 0;
@@ -97,4 +110,8 @@ fn main() {
     println!("{}", whileloop(5));
     
     println!("{}", forloop());
+
+    println!("{}", NAME);
+
+    tupl();
 }
