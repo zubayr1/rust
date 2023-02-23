@@ -1,3 +1,6 @@
+use std::fs::File;
+use std::io::prelude::*;
+
 const NAME: &str = "sarah ulfat";
 const AGE: u8 = 20;
 
@@ -43,6 +46,7 @@ struct Color<'a>
 fn arr(){
     let numbers = [1,2,3,4,5];
 
+    
     println!("{}", numbers[0]);
 
     println!("{}", numbers.len());
@@ -87,7 +91,13 @@ fn forloop() -> i32
         println!("the number is {}", m);
     }
 
-    let animals = vec!["bugs", "daffy", "tom", "jerry"];
+    let mut animals = vec!["bugs", "daffy", "tom", "jerry"];
+
+    animals.push("scooby");
+
+    animals.push("dd");
+
+    animals.remove(5);
 
     for i in animals.iter()
     {
@@ -186,6 +196,9 @@ fn main() {
 
     let bg = Color{red:"red", green:"green", blue:"blue"};
 
+    let mystrforbg = String::from("red and green and blue");
+
+
     println!("{}", bg.red);
 
     rect();
@@ -200,5 +213,13 @@ fn main() {
     {
         print!("{}", t);
     }
+
+    let mut file = File::open("../../info.txt").expect("cant open the file");
+
+    let mut contents = String::new();
+
+    file.read_to_string(&mut contents).expect("cant read..");
+
+    println!("\n{}", contents);
 
 }
