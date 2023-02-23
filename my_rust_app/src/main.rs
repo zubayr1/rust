@@ -1,6 +1,27 @@
 const NAME: &str = "sarah ulfat";
 const AGE: u8 = 20;
 
+struct Rectangle
+{
+    width: u32,
+    height: u32
+}
+
+impl Rectangle
+{
+    fn print_desc(&self)
+    {
+        println!("{}, {}", self.width, self.height);
+    }
+}
+
+fn rect()
+{
+    let myrect = Rectangle{width: 10, height: 5};
+
+    myrect.print_desc();
+}
+
 struct Color<'a>
 {
     red: &'a str,
@@ -155,4 +176,6 @@ fn main() {
     let bg = Color{red:"red", green:"green", blue:"blue"};
 
     println!("{}", bg.red);
+
+    rect();
 }
