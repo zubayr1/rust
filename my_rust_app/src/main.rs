@@ -13,6 +13,15 @@ impl Rectangle
     {
         println!("{}, {}", self.width, self.height);
     }
+
+    fn issquare(&self) -> bool
+    {
+        if self.width == self.height
+        {
+            return true;
+        }
+        return false;
+    }
 }
 
 fn rect()
@@ -20,6 +29,8 @@ fn rect()
     let myrect = Rectangle{width: 10, height: 5};
 
     myrect.print_desc();
+
+    println!("{}",myrect.issquare());
 }
 
 struct Color<'a>
@@ -178,4 +189,16 @@ fn main() {
     println!("{}", bg.red);
 
     rect();
+
+    //string
+    let mystring = String::from("hows it going?");
+
+    println!("length: {}", mystring.len());
+    println!("is empty: {}", mystring.is_empty());
+
+    for t in mystring.split_whitespace()
+    {
+        print!("{}", t);
+    }
+
 }
