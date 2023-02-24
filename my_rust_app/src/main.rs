@@ -1,6 +1,8 @@
 use std::fs::File;
 use std::io::prelude::*;
 
+use std::env;
+
 const NAME: &str = "sarah ulfat";
 const AGE: u8 = 20;
 
@@ -8,6 +10,23 @@ struct Rectangle
 {
     width: u32,
     height: u32
+}
+
+trait HasDouble
+{
+    fn isdouble(&self) -> bool;
+}
+
+impl HasDouble for Rectangle
+{
+    fn isdouble(&self) -> bool
+    {
+        if self.width > self.height
+        {
+            return true;
+        }
+        return false;
+    }
 }
 
 impl Rectangle
@@ -25,6 +44,7 @@ impl Rectangle
         }
         return false;
     }
+    
 }
 
 fn rect()
@@ -34,6 +54,8 @@ fn rect()
     myrect.print_desc();
 
     println!("{}",myrect.issquare());
+
+    // println!("{}",Rectangle.isdouble());
 }
 
 struct Color<'a>
@@ -218,8 +240,23 @@ fn main() {
 
     let mut contents = String::new();
 
+    //write to file
+    file.write_all(b"fc barca").expect("could not write to fail. failed as barca's european campaign");
+
+    //read file
     file.read_to_string(&mut contents).expect("cant read..");
 
     println!("\n{}", contents);
+
+
+    // let args:: Vec<String> = env::args().collect();
+
+    // for arg in args.iter()
+    // {
+    //     println!("{}", arg);
+    // }
+
+
+
 
 }
