@@ -1,6 +1,6 @@
 use std::fs::File;
 use std::io::prelude::*;
-
+use std::io;
 use std::env;
 
 const NAME: &str = "sarah ulfat";
@@ -193,6 +193,21 @@ fn test()
 fn main() {
     println!("Hello, world!");
 
+    //user input
+    let mut input = String::new();
+
+    println!("say something");
+
+    match io::stdin().read_line(&mut input)
+    {
+        Ok(_) => {
+            println!("success {}", input);
+        },
+        Err(e) => {
+            println!("error {}", e);
+        }
+    }
+
     let mut x=45; //i32
     let y="man";
 
@@ -236,17 +251,38 @@ fn main() {
         print!("{}", t);
     }
 
+    //switch match
+
+    let number =13;
+
+    println!("");
+
+    match number
+    {
+        1 => println!("1"),
+
+        2 => println!("2"),
+
+        10 | 11 => println!("10 oder 11"),
+
+        _ => println!("no match")
+    }
+
+
     let mut file = File::open("../../info.txt").expect("cant open the file");
 
     let mut contents = String::new();
 
-    //write to file
-    file.write_all(b"fc barca").expect("could not write to fail. failed as barca's european campaign");
 
-    //read file
-    file.read_to_string(&mut contents).expect("cant read..");
+    
 
-    println!("\n{}", contents);
+    // //write to file
+    // file.write_all(b"fc barca").expect("could not write to fail. failed as barca's european campaign");
+
+    // //read file
+    // file.read_to_string(&mut contents).expect("cant read..");
+
+    // println!("\n{}", contents);
 
 
     // let args:: Vec<String> = env::args().collect();
@@ -257,6 +293,7 @@ fn main() {
     // }
 
 
+   
 
 
 }
