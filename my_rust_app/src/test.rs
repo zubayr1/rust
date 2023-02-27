@@ -1,7 +1,7 @@
-fn test()
+pub fn test_message(message: &str) 
 {
     let x: i64 = 69;
 
     
-    println!(x);
+    println!("{} and {}", x, message);
 }

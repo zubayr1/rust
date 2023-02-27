@@ -3,8 +3,12 @@ use std::io::prelude::*;
 use std::io;
 use std::env;
 
+//extern
 extern crate rand;
 use rand::Rng;
+
+//import own files
+mod test;
 
 const NAME: &str = "sarah ulfat";
 const AGE: u8 = 20;
@@ -279,7 +283,7 @@ fn main() {
     let mut contents = String::new();
 
 
-    
+    test::test_message("ok");
 
     // //write to file
     // file.write_all(b"fc barca").expect("could not write to fail. failed as barca's european campaign");
