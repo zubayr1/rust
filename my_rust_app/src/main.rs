@@ -3,6 +3,9 @@ use std::io::prelude::*;
 use std::io;
 use std::env;
 
+extern crate rand;
+use rand::Rng;
+
 const NAME: &str = "sarah ulfat";
 const AGE: u8 = 20;
 
@@ -193,6 +196,8 @@ fn test()
 fn main() {
     println!("Hello, world!");
 
+    let random_number = rand::thread_rng().gen_range(1, 1000);
+
     //user input
     let mut input = String::new();
 
@@ -201,7 +206,7 @@ fn main() {
     match io::stdin().read_line(&mut input)
     {
         Ok(_) => {
-            println!("success {}", input);
+            println!("success {} {}", input, random_number);
         },
         Err(e) => {
             println!("error {}", e);
