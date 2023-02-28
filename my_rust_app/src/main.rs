@@ -10,6 +10,8 @@ use rand::Rng;
 //import own files
 mod test;
 
+mod httpget;
+
 const NAME: &str = "sarah ulfat";
 const AGE: u8 = 20;
 
@@ -284,6 +286,9 @@ fn main() {
 
 
     test::test_message("ok");
+
+
+    httpget::httpget();
 
     // //write to file
     // file.write_all(b"fc barca").expect("could not write to fail. failed as barca's european campaign");
